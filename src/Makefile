@@ -8,7 +8,8 @@ ASFLAGS = -f elf
 all: kernel.elf
 
 kernel.elf: $(OBJECTS)
-		ld $(LDFLAGS) $(OBJECTS) -o kernel.elf
+		ld $(LDFLAGS) $(OBJECTS) -o ../build/kernel.elf
+		rm *.o IO/*.o
 
 %.o: %.c
 		$(CC) $(CFLAGS) $< -o $@
@@ -17,4 +18,4 @@ kernel.elf: $(OBJECTS)
 		$(AS) $(ASFLAGS) $< -o $@
 
 clean:
-	rm -rf *.o IO/*.o kernel.elf
+	rm -rf *.o IO/*.o ../build/kernel.elf
