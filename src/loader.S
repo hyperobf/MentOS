@@ -1,3 +1,5 @@
+global stack_bottom
+
 MAGIC_NUMBER	equ 0x1BADB002
 MBALIGN			equ 1 << 0
 MEMINFO			equ 1 << 1
@@ -12,6 +14,7 @@ align 4
 	dd CHECKSUM
 
 section .bss
+
 align 16
 stack_bottom:
 resb STACK_SIZE

@@ -34,7 +34,7 @@ void framebuffer_write_string(const char *data)
 		if(terminal_row >= VGA_HEIGHT)
 			framebuffer_scroll();
 		const size_t index = terminal_row * VGA_WIDTH + terminal_column;
-		framebuffer_write_cell(index, data[i], FB_BLACK, FB_LGRAY);
+		framebuffer_write_cell(index, data[i], FB_BLACK, FB_WHITE);
 		if(++terminal_column == VGA_WIDTH)
 		{
 			terminal_column = 0;
@@ -55,7 +55,7 @@ void framebuffer_clear()
 		for(size_t x = 0; x < VGA_WIDTH; x++)
 		{
 			const size_t index = y * VGA_WIDTH + x;
-			framebuffer_write_cell(index, ' ', FB_BLACK, FB_LGRAY);
+			framebuffer_write_cell(index, ' ', FB_BLACK, FB_WHITE);
 		}
 	}
 }
