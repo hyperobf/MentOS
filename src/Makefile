@@ -1,4 +1,4 @@
-OBJECTS = IO/io.o IO/framebuffer.o kmain.o loader.o
+OBJECTS = IO/io.o IO/framebuffer.o IO/serial.o kmain.o loader.o
 CC = i686-elf-gcc
 CFLAGS = -std=gnu99 -ffreestanding -O2 -Wall -Wextra -c
 LDFLAGS = -T link.ld -melf_i386

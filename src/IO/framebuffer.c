@@ -72,7 +72,7 @@ void framebuffer_scroll()
 	terminal_row--;
 }
 
-void framebuffer_move_cursor(unsigned short pos)
+void framebuffer_move_cursor(uint16_t pos)
 {
 	outb(FRAMEBUFFER_COMMAND_PORT, FRAMEBUFFER_HIGH_BYTE_CMD);
 	outb(FRAMEBUFFER_DATA_PORT, ((pos >> 8) & 0x00FF));

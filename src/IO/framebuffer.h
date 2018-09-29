@@ -5,6 +5,7 @@
 #include <stddef.h>
 #include <stdint.h>
 #include "stringutils.h"
+#include "io.h"
 
 #define FRAMEBUFFER_COMMAND_PORT	0x3D4
 #define FRAMEBUFFER_DATA_PORT		0x3D5
@@ -69,20 +70,12 @@ void framebuffer_clear();
  */
 void framebuffer_scroll();
 
-/* outb:
- * Sends the given data to the given I/O port. Defined in IO.asm
- * 
- * @param port 	The I/O port to send the data to
- * @param data	The data to send to the I/O port
- */
-void outb(unsigned short port, unsigned char data);
-
 /* framebuffer_move_cursor:
  * Moves the cursor of the framebuffer to the given position
  *
  * @param pos	The new position of the cursor
  */
-void framebuffer_move_cursor(unsigned short pos);
+void framebuffer_move_cursor(uint16_t pos);
 
 /* framebuffer_cursor_xy:
  * Moves the cursor to position with coordinates
